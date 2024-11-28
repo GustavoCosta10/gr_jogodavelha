@@ -1,0 +1,106 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-image: url('konora.png');  /* Caminho da imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    color: white;  /* Ajusta a cor do texto para contrastar com o fundo */
+}
+
+h1 {
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* Adiciona uma sombra ao texto para melhor visibilidade */
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8);  /* Fundo branco semitransparente */
+    border: 2px solid #ccc;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.cell img {
+    width: 80px;
+    height: 80px;
+}
+
+.cell:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.game-status {
+    margin-top: 20px;
+    font-size: 1.2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* Adiciona uma sombra ao texto para melhor visibilidade */
+}
+
+/* Cor para o texto de vitória do Naruto */
+.game-status.naruto-vitoria {
+    color: #FF6A00;  /* Laranja para Naruto */
+    font-weight: bold;
+}
+
+/* Cor para o texto de vitória do Sasuke */
+.game-status.sasuke-vitoria {
+    color: #7A00B1;  /* Roxo para Sasuke */
+    font-weight: bold;
+}
+
+/* Cor para o texto de empate */
+.game-status.empate {
+    color: #808080;  /* Cinza para empate */
+    font-weight: bold;
+}
+
+/* Tamanho do GIF */
+.game-status img {
+    width: 200px;  /* Define uma largura maior para os GIFs */
+    height: auto;
+    max-width: 100%;
+    margin-top: 10px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;  /* Adiciona espaço entre os botões */
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.winning-line {
+    position: absolute;
+    width: 0;
+    height: 5px;
+    background-color: red;
+    transform-origin: left;
+    transition: width 0.5s;
+}
